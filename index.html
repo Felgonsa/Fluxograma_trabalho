@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Fluxograma</title>
+
+    <style>
+      .customBg {
+        width: 400px;
+        background-color: #44475a;
+      }
+    </style>
+  </head>
+
+  <body class="bg-dark text-light">
+    <h1 class="d-flex justify-content-center">
+      Fluxograma cadastro fornecedor
+    </h1>
+
+    <div class="customBg d-flex justify-content-center m-auto rounded p-3">
+      <form onsubmit="return validateForm()">
+        <div class="mb-3">
+          <label for="fornecedor" class="form-label"
+            >Nome do fornecedor</label
+          >
+          <input type="text" class="form-control" id="fornecedor" />
+        </div>
+
+        <div class="mb-3">
+          <label for="cnpj-input" class="form-label">CNPJ</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cnpj-input"
+            onkeydown="formatCnpj(event)"
+          />
+        </div>
+
+        <label for="ramoSelect">Ramo</label>
+        <select id="ramoSelect" class="form-select" aria-label="Default select example">
+          <option selected disabled></option>
+          <option value="1">Vendas</option>
+          <option value="2">Prestadação de serviços</option>
+          <option value="3">Ambos</option>
+        </select>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="tel-input" class="form-label">Telefone</label>
+            <input
+              type="text"
+              class="form-control"
+              id="tel-input"
+              onkeydown="formatTel(event)"
+            />
+          </div>
+
+
+          
+        
+
+        <button type="" class="btn btn-primary" >Cadastrar</button>
+      </form>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
